@@ -1,0 +1,12 @@
+[
+  {
+    "name": "GCC Kit with local Ninja",
+    "compilers": {
+      "C": "gcc",
+      "CXX": "g++"
+    },
+    "environmentVariables": {
+      "PATH": "${workspaceFolder}/.ninja;${env:PATH}"
+    }
+  }
+]

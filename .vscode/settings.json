@@ -1,0 +1,7 @@
+{
+  "cmake.buildDirectory": "${workspaceFolder}/cmake-build",
+  "terminal.integrated.env.windows": {
+    "PATH": "${workspaceFolder}/.ninja;${env:PATH}"
+  },
+  "CodeGPT.apiKey": "CodeGPT Plus Beta"
+}
