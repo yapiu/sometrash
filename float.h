@@ -1,12 +1,10 @@
 #include <stdio.h>
 
 class myfloat
-{
-protected:
+{  
+public:
     int c; 
     int d;
-    
-public:
     myfloat(double v)
     {
         c = (int)v;
@@ -16,4 +14,8 @@ public:
     {
         printf("%d.%04d ", c, d);
     }
+    friend myfloat operator + (myfloat, myfloat);
+    friend myfloat operator * (myfloat, myfloat);
+    friend myfloat operator - (myfloat, myfloat);
+    friend myfloat operator / (myfloat, myfloat);
 };
