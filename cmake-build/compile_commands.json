@@ -1,8 +1,0 @@
-[
-{
-  "directory": "C:/Users/dorov/Documents/cpphw1/cmake-build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -o CMakeFiles\\cpphw1.dir\\main.cpp.obj -c C:\\Users\\dorov\\Documents\\cpphw1\\main.cpp",
-  "file": "C:\\Users\\dorov\\Documents\\cpphw1\\main.cpp",
-  "output": "CMakeFiles\\cpphw1.dir\\main.cpp.obj"
-}
-]

@@ -1,3 +1,0 @@
-C:/Users/dorov/Documents/cpphw1/cmake-build/CMakeFiles/cpphw1.dir
-C:/Users/dorov/Documents/cpphw1/cmake-build/CMakeFiles/edit_cache.dir
-C:/Users/dorov/Documents/cpphw1/cmake-build/CMakeFiles/rebuild_cache.dir
