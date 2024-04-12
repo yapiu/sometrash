@@ -60,12 +60,18 @@ myfloat operator-(myfloat f1, myfloat f2) {
 }
 myfloat operator*(myfloat f1, myfloat f2) {
 
-  int sum_c = f1.c * f2.c;
-  int sum_d = f1.d * f2.d;
-  
-  condition = 0;
-  f1.c = sum_c;
-  f1.d = sum_d;
-  return myfloat(sum_c, sum_d, condition);
-}
+  int f1d = f1.d / 1000;
+  int f2d = f2.d / 1000;
+  int f1c = f1.c;
+  int f2c = f2.c;
 
+  int first_part = (f1c * 10 + f1d) * f2d;
+  int second_part = (f1c * 10 + f1d) * f2c * 10;
+
+  double multiply = (double)(first_part + second_part) / 100;
+  myfloat result (multiply);
+
+  condition = 0;
+
+  return myfloat(result.c, result.d, condition);
+}

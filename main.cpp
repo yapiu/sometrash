@@ -11,6 +11,7 @@ int main()
 	myfloat f4pos = f2 - f1;
 	myfloat f5 = f2 - f10;
 	myfloat f6 = f2 * f1;
+	f1.print();
 	f3.print();
 	f4.print();
 	f4pos.print();

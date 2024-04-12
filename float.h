@@ -9,7 +9,7 @@ protected:
 public:
   myfloat(double v) {
     c = (int)v;
-    d = (int)((v - c) * 10000);
+    d = (int)(((v - c) * 10000) + 1);
   }
   myfloat(int sum_c, int sum_d, int condition) {
     if (condition == 0) {
