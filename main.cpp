@@ -2,20 +2,17 @@
 
 int main()
 {
-	myfloat f1(7.9);
-	myfloat f2(8.2);
-	myfloat f10(10.9);
+	myfloat f1(-7.2);
+	myfloat f2(8.3);
+	myfloat f3(-10.9);
+	myfloat f4 (2.2);
 	
-	myfloat f3 = f1 + f2;
-	myfloat f4 = f1 - f2;
-	myfloat f4pos = f2 - f1;
-	myfloat f5 = f2 - f10;
-	myfloat f6 = f2 * f1;
-	f1.print();
-	f3.print();
-	f4.print();
-	f4pos.print();
-	f5.print();
+	myfloat f6 = f2 * f3;
+	myfloat f7 = f1 * f3;
+	myfloat f8 = f2 * f4;
+
 	f6.print();
+	f7.print();
+	f8.print();
 	return 0;
 }
