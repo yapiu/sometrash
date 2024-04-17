@@ -1,5 +1,6 @@
-#include <stdio.h>
 #include <cstdlib>
+#include <stdio.h>
+
 
 class myfloat {
 protected:
@@ -10,9 +11,9 @@ protected:
 public:
   myfloat(double v) {
     c = (int)v;
-    d = abs((int)(((v - c) * 10000)+ 1));
+    d = abs((int)(((v - c) * 10000) + 1));
   }
-  myfloat(int sum_c, int sum_d, int condition, bool sign_in) {
+  myfloat(int sum_c, int sum_d, int condition = 0, bool sign_in = 0) {
     if (condition == 0) {
       while (sum_d > 9999) {
         sum_c++;
@@ -30,10 +31,15 @@ public:
     sign = sign_in;
   }
   void print() {
+    char sg = ' ';
     if (sign) {
-      printf("-%d.%04d ", c, d);
-    } else
-      printf("%d.%04d ", c, d);
+      sg = '-';
+    }
+    printf("%c%d.%04d ", sg, c, d);
+    //   if (sign) {
+    //     printf("-%d.%04d ", c, d);
+    //   } else
+    //     printf("%d.%04d ", c, d);
   }
   friend myfloat operator+(myfloat, myfloat);
   friend myfloat operator*(myfloat, myfloat);
