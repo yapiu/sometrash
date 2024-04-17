@@ -11,7 +11,9 @@ protected:
 public:
   myfloat(double v) {
     c = (int)v;
-    d = abs((int)(((v - c) * 10000) + 1));
+    d = abs((int)(((v - c) * 10000)));
+    if(c > 0)
+      d ++;
   }
   myfloat(int sum_c, int sum_d, int condition = 0, bool sign_in = 0) {
     if (condition == 0) {
@@ -36,10 +38,6 @@ public:
       sg = '-';
     }
     printf("%c%d.%04d ", sg, c, d);
-    //   if (sign) {
-    //     printf("-%d.%04d ", c, d);
-    //   } else
-    //     printf("%d.%04d ", c, d);
   }
   friend myfloat operator+(myfloat, myfloat);
   friend myfloat operator*(myfloat, myfloat);
