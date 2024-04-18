@@ -1,6 +1,6 @@
 #include <cstdlib>
 #include <stdio.h>
-
+#pragma once
 
 class myfloat {
 protected:
