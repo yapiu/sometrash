@@ -37,15 +37,19 @@ public:
       sum_c = -9999;
       sum_d = 9999;
       condition = -2;
-    } else
-      condition = 3;
-    condition = condition_print;
+    } 
+    if ((sum_c < 9999 && sum_d < 9999) || (sum_c > -9999 && sum_d < 9999)) {
+    condition = 3;
+    }
+    
+    condition_print = condition;
     c = sum_c;
     d = sum_d;
     sign = sign_in;
-    
   }
 
   friend Myfloat_overflow operator+(Myfloat_overflow, Myfloat_overflow);
+  friend Myfloat_overflow operator-(Myfloat_overflow, Myfloat_overflow);
+  friend Myfloat_overflow operator*(Myfloat_overflow, Myfloat_overflow);
   void print();
 };
