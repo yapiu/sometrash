@@ -33,6 +33,7 @@ public:
     d = sum_d;
     sign = sign_in;
   }
+  myfloat(myfloat &a);
   void print() {
     char sg = ' ';
     if (sign) {
@@ -40,6 +41,7 @@ public:
     }
     printf("%c%d.%04d ", sg, c, d);
   }
+
   friend myfloat operator+(myfloat, myfloat);
   friend myfloat operator*(myfloat, myfloat);
   friend myfloat operator-(myfloat, myfloat);

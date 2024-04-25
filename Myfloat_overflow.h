@@ -15,7 +15,7 @@ public:
       d++;
   }
   Myfloat_overflow(int sum_c, int sum_d, int condition = 0, bool sign_in = 0)
-      : myfloat(sum_c, sum_d, condition, sign_in) {
+      : myfloat(sum_c, sum_d, condition, sign_in){
     if (sum_d > 9999 && sum_c < 9999) {
       sum_d = 9999;
       condition = 1;
@@ -46,6 +46,10 @@ public:
     c = sum_c;
     d = sum_d;
     sign = sign_in;
+  }
+
+  Myfloat_overflow(myfloat a) : myfloat(a){
+
   }
 
   friend Myfloat_overflow operator+(Myfloat_overflow, Myfloat_overflow);

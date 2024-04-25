@@ -1,5 +1,8 @@
 #include "float.h"
-
+myfloat::myfloat(myfloat &a){
+c = a.c;
+d = a.d;
+}
 myfloat operator+(myfloat f1, myfloat f2) {
   int condition, sum_d, sum_c;
   bool sign;
