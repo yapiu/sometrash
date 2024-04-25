@@ -13,7 +13,9 @@ public:
     c = (int)v;
     d = abs((int)(((v - c) * 10000)));
     if(c > 0)
-      d ++;
+      d++;
+    sign = false;
+    //???
   }
   myfloat(int sum_c, int sum_d, int condition = 0, bool sign_in = 0) {
     if (condition == 0) {

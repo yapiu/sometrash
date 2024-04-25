@@ -10,11 +10,6 @@ int main() {
   myfloat f4(2.2);
   myfloat f5(0);
 
-  Myfloat_overflow f1m(-7.2);
-  Myfloat_overflow f2m(8.3);
-  Myfloat_overflow f3m(-10.9);
-  Myfloat_overflow f4m(2.2);
-  Myfloat_overflow f5m(9999.9999);
 
   myfloat a = f2 * f3;
   myfloat b = f1 * f3;
@@ -29,19 +24,6 @@ int main() {
   myfloat x = f4 - f2;
   myfloat n = f3 - f4;
 
-  Myfloat_overflow am = f2m * f3m;
-  Myfloat_overflow bm = f1m * f3m;
-  Myfloat_overflow cm = f2m * f4m;
-
-  Myfloat_overflow dm = f1m + f3m;
-  Myfloat_overflow em = f2m + f3m;
-  Myfloat_overflow fm = f2m + f4m;
-
-  Myfloat_overflow gm = f1m - f3m;
-  Myfloat_overflow zm = f2m - f4m;
-  Myfloat_overflow xm = f4m- f2m;
-  Myfloat_overflow nm = f3m - f4m;
-
   a.print();
   b.print();
   c.print();
@@ -55,15 +37,5 @@ int main() {
 
   printf("\n");
 
-  am.print();
-  bm.print();
-  cm.print();
-  dm.print();
-  em.print();
-  fm.print();
-  gm.print();
-  zm.print();
-  xm.print();
-  nm.print();
   return 0;
 }
