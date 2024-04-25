@@ -1,15 +1,13 @@
 #include "float.h"
 
 myfloat operator+(myfloat f1, myfloat f2) {
-  int condition;
+  int condition, sum_d, sum_c;
   bool sign;
-  int sum_d;
 
   if (f1.c + f2.c < 0) {
-  condition = 1;
-  }
-  else {
-  condition = 0;
+    condition = 1;
+  } else {
+    condition = 0;
   }
 
   if (f1.c + f2.c < 0) {
@@ -17,17 +15,18 @@ myfloat operator+(myfloat f1, myfloat f2) {
   } else
     sign = false;
 
-  int sum_c = abs(f1.c + f2.c);
   if (f1.c + f2.c < 0) {
+    sum_c = abs(f1.c - f2.c);
     sum_d = abs(f1.d - f2.d);
-  } else
+  } else {
+    sum_c = abs(f1.c - f2.c);
     sum_d = f1.d + f2.d;
-
+  }
   return myfloat(sum_c, sum_d, condition, sign);
 }
 myfloat operator-(myfloat f1, myfloat f2) {
-  f2.sign=!f2.sign;
-  return operator+(f1,f2);
+  f2.sign = !f2.sign;
+  return operator+(f1, f2);
   // int sum_c, sum_d;
 
   // // Вычитание, где первое число больше второго, а его дробная часть меньше
