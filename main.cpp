@@ -41,6 +41,9 @@ int main() {
   Myfloat_overflow zm = f2m - f4m;
   Myfloat_overflow xm = f4m- f2m;
   Myfloat_overflow nm = f3m - f4m;
+  Myfloat_overflow mm = f5m + f5m;
+  Myfloat_overflow km = f5m - f5m;
+  Myfloat_overflow pm = f2m + f5m;
 
   a.print();
   b.print();
@@ -65,5 +68,8 @@ int main() {
   zm.print();
   xm.print();
   nm.print();
+  mm.print();
+  km.print();
+  pm.print();
   return 0;
 }

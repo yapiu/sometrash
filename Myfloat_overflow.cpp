@@ -1,20 +1,14 @@
 #include "Myfloat_overflow.h"
 
-void Myfloat_overflow ::print() {
+void Myfloat_overflow::print() {
   char sg = ' ';
   if (sign) {
     sg = '-';
   }
-  if (condition_print == 0 || condition_print == -1) {
+  if (condition_print == 0) {
     printf("%c*%d.%04d ", sg, c, d);
   }
-  if (condition_print == 1) {
-    printf("%c%d.*%04d ", sg, c, d);
-  }
-  if (condition_print == 2 || condition_print == -2) {
-    printf("%c*%d.*%04d ", sg, c, d);
-  }
-  if (condition_print == 3) {
+  if (condition_print == 1){
     printf("%c%d.%04d ", sg, c, d);
   }
 }
@@ -24,7 +18,6 @@ Myfloat_overflow operator+(Myfloat_overflow f1, Myfloat_overflow f2) {
 
   if (f1.d < f2.d) {
     condition = 0;
-
   } else {
     condition = 1;
   }

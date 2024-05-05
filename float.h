@@ -6,15 +6,20 @@ class myfloat {
 protected:
   int c;
   int d;
-  bool sign;
+  bool sign = false;
 
 public:
   myfloat(double v) {
     c = (int)v;
     d = abs((int)(((v - c) * 10000)));
-    if(c > 0)
-      d++;
-    sign = false;
+    // if(c > 0){
+    //   d++;
+    //   sign = false;
+    // }
+    // else if (c < 0) {
+    // c = abs(c);
+    // sign = true;
+    // }
   }
   myfloat(int sum_c, int sum_d, int condition = 0, bool sign_in = 0) {
     if (condition == 0) {
