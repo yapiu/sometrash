@@ -9,7 +9,7 @@ protected:
   bool sign = false;
 
 public:
-  myfloat(double v) {
+  myfloat(double v = 0.0) {
     c = (int)v;
     d = abs((int)(((v - c) * 10000)));
     // if(c > 0){
@@ -38,7 +38,7 @@ public:
     d = sum_d;
     sign = sign_in;
   }
-  myfloat(myfloat &a);
+  //myfloat(myfloat &a);
   void print() {
     char sg = ' ';
     if (sign) {

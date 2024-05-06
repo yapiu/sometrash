@@ -1,15 +1,14 @@
 #include "float.h"
-myfloat::myfloat(myfloat &a){
-c = a.c;
-d = a.d;
-}
+// myfloat::myfloat(myfloat &a){
+// c = a.c;
+// d = a.d;
+// }
 myfloat operator+(myfloat f1, myfloat f2) {
   int condition, sum_d, sum_c;
   bool sign;
 
   if (f1.d < f2.d) {
     condition = 0;
-
   } else {
     condition = 1;
   }
