@@ -15,6 +15,7 @@ int main() {
   Myfloat_overflow f3m(-10.9);
   Myfloat_overflow f4m(2.2);
   Myfloat_overflow f5m(9999.9999);
+  Myfloat_overflow f6m(1000000000);
 
   myfloat a = f2 * f3;
   myfloat b = f1 * f3;
@@ -44,7 +45,7 @@ int main() {
   Myfloat_overflow mm = f5m + f5m;
   Myfloat_overflow km = f5m - f5m;
   Myfloat_overflow pm = f2m + f5m;
-
+  
   a.print();
   b.print();
   c.print();
