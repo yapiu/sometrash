@@ -40,7 +40,7 @@ public:
   }
   //myfloat(myfloat &a);
   void print() {
-    char sg = ' ';
+    char sg = '\0';
     if (sign) {
       sg = '-';
     }

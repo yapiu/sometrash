@@ -2,11 +2,11 @@
 #include "float.h"
 
 void Myfloat_overflow::print() {
-  if (Saturation_flag == 0) {
+  if (Saturation_flag == 1) {
     printf("*");
   }
   myfloat::print();
-}
+} 
 Myfloat_overflow operator+(Myfloat_overflow f1, Myfloat_overflow f2) {
 
   myfloat sum = (myfloat)f1 + (myfloat)f2;
