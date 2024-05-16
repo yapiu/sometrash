@@ -8,20 +8,22 @@ void Myfloat_overflow::print() {
   myfloat::print();
 } 
 Myfloat_overflow operator+(Myfloat_overflow f1, Myfloat_overflow f2) {
-
+  int flag = f1.Saturation_flag || f2.Saturation_flag;
   myfloat sum = (myfloat)f1 + (myfloat)f2;
-
-  return Myfloat_overflow(sum);
+  return Myfloat_overflow(sum, flag);
 }
 Myfloat_overflow operator-(Myfloat_overflow f1, Myfloat_overflow f2) {
 
+  int flag = f1.Saturation_flag || f2.Saturation_flag;
+
   myfloat result = (myfloat)f1 - (myfloat)f2;
 
-  return Myfloat_overflow(result);
+  return Myfloat_overflow(result, flag);
 }
 Myfloat_overflow operator*(Myfloat_overflow f1, Myfloat_overflow f2) {
+  int flag = f1.Saturation_flag || f2.Saturation_flag;
 
   myfloat multiply = (myfloat)f1 * (myfloat)f2;
 
-  return Myfloat_overflow(multiply);
+  return Myfloat_overflow(multiply, flag);
 }
