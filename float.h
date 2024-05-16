@@ -12,14 +12,6 @@ public:
   myfloat(double v = 0.0) {
     c = (int)v;
     d = abs((int)(((v - c) * 10000)));
-    // if(c > 0){
-    //   d++;
-    //   sign = false;
-    // }
-    // else if (c < 0) {
-    // c = abs(c);
-    // sign = true;
-    // }
   }
   myfloat(int sum_c, int sum_d, int condition = 0, bool sign_in = 0) {
     if (condition == 0) {
@@ -38,13 +30,12 @@ public:
     d = sum_d;
     sign = sign_in;
   }
-  //myfloat(myfloat &a);
   void print() {
     char sg = '\0';
     if (sign) {
       sg = '-';
     }
-    printf("%c%d.%04d ", sg, c, d);
+    printf("%c%d.%04d", sg, c, d);
   }
 
   friend myfloat operator+(myfloat, myfloat);

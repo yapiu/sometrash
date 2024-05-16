@@ -47,30 +47,51 @@ int main() {
   Myfloat_overflow pm = f2m + f5m;
   
   a.print();
+  printf(" ");
   b.print();
+  printf(" ");
   c.print();
+  printf(" ");
   d.print();
+  printf(" ");
   e.print();
+  printf(" ");
   f.print();
+  printf(" ");
   g.print();
+  printf(" ");
   z.print();
+  printf(" ");
   x.print();
+  printf(" ");
   n.print();
 
   printf("\n");
 
   am.print();
+    printf(" ");
   bm.print();
+    printf(" ");
   cm.print();
+    printf(" ");
   dm.print();
+    printf(" ");
   em.print();
+    printf(" ");
   fm.print();
+    printf(" ");
   gm.print();
+    printf(" ");
   zm.print();
+    printf(" ");
   xm.print();
+    printf(" ");
   nm.print();
+    printf(" ");
   mm.print();
+    printf(" ");
   km.print();
+    printf(" ");
   pm.print();
   return 0;
 }
