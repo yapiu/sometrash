@@ -6,7 +6,7 @@ class myfloat {
 protected:
   int c;
   int d;
-  bool sign = false;
+  bool sign;
 
 public:
   myfloat(double v = 0.0) {
@@ -35,7 +35,7 @@ public:
     if (sign) {
       sg = '-';
     }
-    printf("%c%d.%04d", sg, c, d);
+    printf("%c%d.%04d ", sg, c, d);
   }
 
   friend myfloat operator+(myfloat, myfloat);
