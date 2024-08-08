@@ -1,8 +1,28 @@
 #include "float.h"
-// myfloat::myfloat(myfloat &a){
-// c = a.c;
-// d = a.d;
-// }
+void myfloat::print() {
+  char sg = '\0';
+  if (sign) {
+    sg = '-';
+  }
+  printf("%c%d.%04d ", sg, c, d);
+}
+myfloat::myfloat(int sum_c, int sum_d, int condition = 0, bool sign_in = 0) {
+  if (condition == 0) {
+    while (sum_d > 9999) {
+      sum_c++;
+      sum_d -= 10000;
+    }
+  }
+  if (condition == 1) {
+    while (sum_d > -9999 && sum_c > 0 && sum_d < 0) {
+      sum_c--;
+      sum_d += 10000;
+    }
+  }
+  c = sum_c;
+  d = sum_d;
+  sign = sign_in;
+}
 myfloat operator+(myfloat f1, myfloat f2) {
   int condition, sum_d, sum_c;
   bool sign;
@@ -27,7 +47,7 @@ myfloat operator+(myfloat f1, myfloat f2) {
 myfloat operator-(myfloat f1, myfloat f2) {
   f2.sign = !f2.sign;
   if ((f1.c < 0 && f2.c > 0) || (f1.c > 0 && f2.c < 0)) {
-  f1.d *= -1;
+    f1.d *= -1;
   }
   f2.c *= -1;
   f2.d *= -1;

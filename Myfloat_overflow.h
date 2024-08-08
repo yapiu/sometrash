@@ -14,7 +14,6 @@ private:
       Saturation_flag = 1;
     }
   }
-//=(
 public:
   Myfloat_overflow(double v) : myfloat(v) { overflow(); }
   Myfloat_overflow(myfloat a, int flag) : myfloat(a) {

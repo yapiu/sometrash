@@ -3,4 +3,4 @@ project(cpphw1)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(cpphw1 main.cpp float.h float.cpp Myfloat_overflow.h Myfloat_overflow.cpp)
+add_executable(cpphw1 main.cpp float.h float.cpp Myfloat_overflow.h Myfloat_overflow.cpp vector.h vector.cpp vect.h vect.cpp)
