@@ -1,5 +1,4 @@
 #include "vector.h"
-#include "float.h"
 
 vector::vector(int s){
   if(s <= 0) error("er1");
@@ -61,4 +60,45 @@ void vector::print(){
   for(int i = 0; i < sz; i++){
     v[i].print();
   }
+}
+
+vector vector::operator+(vector &a){
+  int s = size();
+  if(s != a.size()){
+    error("Size error!1");
+  }
+  vector sum(s); 
+  for (int i = 0; i < s; i++){
+    sum.elem(i) = elem(i) + a.elem(i);
+  }
+  return sum;
+}
+
+vector operator - (vector &a, vector &b){
+  int s = a.size();
+  if(s != b.size()){
+    error("Size error");
+  }
+  vector sum(s);
+  myfloat *sp = sum.v, *ap = a.v, *bp = b.v;
+  while (s--){
+    *sp++ = *ap++ - *bp++;
+  }
+  return sum;
+}
+
+vector& vector::operator=(const vector &a){
+  if(this != &a){
+    int s = size();
+  if(s < a.size()){
+    error("Size error!");
+  }
+  if (s > a.size()) {
+    s = a.size();
+  }
+  for(int i = 0; i < s; i++){
+  elem(i) = a.elem(i);
+  }
+  }
+  return *this;
 }

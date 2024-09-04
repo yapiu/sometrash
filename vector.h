@@ -17,6 +17,9 @@ public:
   void kick(int);
   void push(myfloat);
   void print();
+  vector& operator = (const vector &);
+  vector operator + (vector &);
+  friend vector operator - (vector &, vector &);
 };
 
 void error(const char *p);

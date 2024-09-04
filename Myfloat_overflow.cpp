@@ -5,7 +5,7 @@ void Myfloat_overflow::print() {
     printf("*");
   }
   myfloat::print();
-} 
+}
 Myfloat_overflow operator+(Myfloat_overflow f1, Myfloat_overflow f2) {
   int flag = f1.Saturation_flag || f2.Saturation_flag;
   myfloat sum = (myfloat)f1 + (myfloat)f2;
