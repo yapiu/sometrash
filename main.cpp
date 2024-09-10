@@ -28,6 +28,7 @@ int main() {
   v4.print();
 
   v4 = v2 - v3;
+  printf("\n");
   v4.print();
   return 0;
 }

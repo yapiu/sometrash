@@ -8,10 +8,6 @@ vector::vector(int s){
   capacity = s;
 }
 
-// vector::vector(){
-//   //vector(99);//??? надо создать по другому стд конструктор
-// }
-
 vector::~vector(){
 delete []v;
 }
@@ -41,7 +37,7 @@ void vector::kick(int i){
 
 void vector::push(Myfloat_overflow number){
   sz++;
-  if(sz >= capacity){  
+  if(sz >= capacity){
   capacity *= 2; // можно прибавлением делать
   Myfloat_overflow* new_vector = new Myfloat_overflow[capacity];
   for (int i = 0; i < sz - 1; i++) {
@@ -67,7 +63,7 @@ vector vector::operator+(vector &a){
   if(s != a.size()){
     error("Size error!1");
   }
-  vector sum(s); 
+  vector sum(s);
   for (int i = 0; i < s; i++){
     sum.elem(i) = elem(i) + a.elem(i);
   }
@@ -88,18 +84,18 @@ vector operator - (vector &a, vector &b){
 }
 
 vector& vector::operator=(const vector &a){
-  int s = size();
-  if(s < a.size()){
-    Myfloat_overflow *new_vector = new Myfloat_overflow[a.size()];
+  int s = a.size();
+  if(s < a.capacity){
+    Myfloat_overflow *new_vector = new Myfloat_overflow[a.capacity];
     for (int i = 0; i < s; i++) {
     new_vector[i] = v[i];
     }
-    error("Size error!"); // если два разных размера то нужно привести к большему размеру надо подумать
-    // создать вектор с таким размером и присвоить его к второму вектору
-  }
-  if (s > a.size()) {
-    s = a.size();
-  }
+    delete []v;
+    v = new_vector;
+    }
+  // нужно присваивать по капасити
+     // если два разных размера то нужно привести к большему размеру надо подумать
+    // создать вектор с таким размером и присвоить его к второму вектор
   for(int i = 0; i < s; i++){
   elem(i) = a.elem(i);
   }
