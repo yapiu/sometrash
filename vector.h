@@ -1,25 +1,25 @@
-#include "float.h"
+#include "Myfloat_overflow.h"
 class vector {
   protected:
-  myfloat *v;
+  Myfloat_overflow *v;
   int sz;
   int capacity;
 
 public:
-  vector(int);
+  vector(int s = 1);
   vector();
   ~vector();
 
   inline int size() const{return sz;}
-  myfloat &operator [](int);
-  myfloat &elem(int i) const {return v[i];}
-  //const myfloat& elem(int i) const { return v[i]; }
+  Myfloat_overflow &operator [](int);
+  Myfloat_overflow &elem(int i) const {return v[i];}
+  //const Myfloat_overflow& elem(int i) const { return v[i]; }
   void kick(int);
-  void push(myfloat);
+  void push(Myfloat_overflow);
   void print();
   vector& operator = (const vector &);
   vector operator + (vector &);
-  friend vector operator - (vector &, vector &);
+  friend vector operator - (vector &, vector &); // убрать френд
 };
 
 void error(const char *p);
