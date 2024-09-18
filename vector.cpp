@@ -6,10 +6,11 @@ vector::vector(int s){
   if(v == 0) error("er2");
   sz = s;
   capacity = s;
+  //при вызове матрицы присваивает sz и capasity но потом она становиться 1 
 }
 
 vector::~vector(){
-delete []v;
+delete []v; //segfault
 }
 
 Myfloat_overflow& vector::operator[](int i){
@@ -38,7 +39,7 @@ void vector::kick(int i){
 void vector::push(Myfloat_overflow number){
   sz++;
   if(sz >= capacity){
-  capacity *= 2; // можно прибавлением делать
+  capacity *= 2;
   Myfloat_overflow* new_vector = new Myfloat_overflow[capacity];
   for (int i = 0; i < sz - 1; i++) {
   new_vector[i] = v[i];
@@ -87,17 +88,11 @@ vector& vector::operator=(const vector &a){
   int s = a.size();
   if(s < a.capacity){
     Myfloat_overflow *new_vector = new Myfloat_overflow[a.capacity];
-    for (int i = 0; i < s; i++) {
-    new_vector[i] = v[i];
-    }
     delete []v;
     v = new_vector;
     }
-  // нужно присваивать по капасити
-     // если два разных размера то нужно привести к большему размеру надо подумать
-    // создать вектор с таким размером и присвоить его к второму вектор
   for(int i = 0; i < s; i++){
-  elem(i) = a.elem(i);
+  elem(i) = a.elem(i); //segfault
   }
-  return *this; //изменить иф
+  return *this;
 }
