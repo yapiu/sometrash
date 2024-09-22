@@ -6,10 +6,11 @@ int column;
 vector *matrix;
 
 public:
-// Matrix();
-Matrix(int, int);
+Matrix(int = 1, int = 1);
+Matrix(const Matrix &a);
 ~Matrix();
 vector &operator [](int);
-// Matrix &operator=(const vector &);
+Matrix &operator=(const vector &);
+
 void print();
 };

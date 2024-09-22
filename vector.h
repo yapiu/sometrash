@@ -7,19 +7,18 @@ class vector {
 
 public:
   vector(int s = 1);
-  // vector();
   ~vector();
+  vector(const vector &);
 
   inline int size() const{return sz;}
   Myfloat_overflow &operator [](int);
   Myfloat_overflow &elem(int i) const {return v[i];}
-  //const Myfloat_overflow& elem(int i) const { return v[i]; }
   void kick(int);
   void push(Myfloat_overflow);
   void print();
   vector& operator = (const vector &);
   vector operator + (vector &);
-  friend vector operator - (vector &, vector &); // убрать френд
+  friend vector operator - (vector &, vector &);
 };
 
 void error(const char *p);

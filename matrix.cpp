@@ -8,12 +8,12 @@ vector &Matrix::operator[](int number) {
   return matrix[number];
 }
 
-// Matrix &Matrix::operator=(const vector &a) {
-//   for (int i = 0; i < row; ++i) {
-//     matrix[i] = a;
-//   }
-//   return *this;
-// }
+Matrix &Matrix::operator=(const vector &a) {
+  for (int i = 0; i < row; ++i) {
+    matrix[i] = a;
+  }
+  return *this;
+}
 
 Matrix::Matrix(int numberOfRows, int numberOfColumn) {
   if (numberOfColumn <= 0 || numberOfRows <= 0)
@@ -22,23 +22,32 @@ Matrix::Matrix(int numberOfRows, int numberOfColumn) {
   row = numberOfRows;
   column = numberOfColumn;
 
-  matrix = new vector[numberOfRows];
+  matrix = new vector[numberOfRows]; // vector with 1 elements
 
-    if (matrix == 0)
+  if (matrix == 0)
     error("Null pointer");
 
+  vector massive = vector(numberOfColumn); 
   for (int i = 0; i < numberOfRows; i++) {
-    matrix[i] = vector(numberOfColumn);
+    matrix[i] = massive;
   }
 }
 
-// Matrix::Matrix() {}
+Matrix::Matrix(const Matrix &a) {
+  row = a.row;
+  column = a.column;
+
+  matrix = new vector[row];
+  for (int i = 0; i < row; i++) {
+    matrix[i] = a.matrix[i];
+  }
+}
 
 Matrix::~Matrix() { delete[] matrix; }
 
 void Matrix::print() {
-    for (int rowConuter = 0; rowConuter < row; rowConuter++){
-      matrix[rowConuter].print();
-      printf("\n");
-    }
+  for (int rowConuter = 0; rowConuter < row; rowConuter++) {
+    matrix[rowConuter].print();
+    printf("\n");
   }
+}
