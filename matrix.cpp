@@ -8,9 +8,9 @@ vector &Matrix::operator[](int number) {
   return matrix[number];
 }
 
-Matrix &Matrix::operator=(const vector &a) {
-  for (int i = 0; i < row; ++i) {
-    matrix[i] = a;
+Matrix &Matrix::operator=(const Matrix &a) {
+  for (int i = 0; i < row; i++) {
+    matrix[i] = a.matrix[i];
   }
   return *this;
 }
@@ -50,4 +50,16 @@ void Matrix::print() {
     matrix[rowConuter].print();
     printf("\n");
   }
+}
+
+Matrix Matrix::operator+(Matrix &a){
+  if(a.column != column && a.row != row){
+    error("Size of matrix is not the same!");
+  }
+  Matrix sum(row,column);
+  
+  for (int rowConter = 0; rowConter < row; rowConter++) {
+  sum[rowConter] = matrix[rowConter] + a.matrix[rowConter];
+  }
+  return sum;
 }

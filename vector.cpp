@@ -94,7 +94,6 @@ vector& vector::operator=(const vector &a){
   for(int i = 0; i < s; i++){
   elem(i) = a.elem(i);
   }
-  // надо приваивать размер и капасити
   sz = a.sz;
   capacity = a.capacity;
   return *this;
