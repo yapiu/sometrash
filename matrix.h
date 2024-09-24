@@ -3,13 +3,13 @@ class Matrix {
 protected:
 int row;
 int column;
-vector *matrix;
+vector<Myfloat_overflow> *matrix;
 
 public:
 Matrix(int = 1, int = 1);
 Matrix(const Matrix &a);
 ~Matrix();
-vector &operator [](int);
+vector<Myfloat_overflow> &operator [](int);
 Matrix &operator=(const Matrix &);
 Matrix operator+(Matrix&);
 

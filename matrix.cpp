@@ -1,7 +1,7 @@
 #include "matrix.h"
 #include <cstdio>
 
-vector &Matrix::operator[](int number) {
+vector<Myfloat_overflow> &Matrix::operator[](int number) {
   if (row < 0 || number >= row) {
     error("Size isn't reachable!");
   }
@@ -22,12 +22,12 @@ Matrix::Matrix(int numberOfRows, int numberOfColumn) {
   row = numberOfRows;
   column = numberOfColumn;
 
-  matrix = new vector[numberOfRows]; // vector with 1 elements
+  matrix = new vector<Myfloat_overflow>[numberOfRows]; // vector with 1 elements
 
   if (matrix == 0)
     error("Null pointer");
 
-  vector massive = vector(numberOfColumn); 
+  vector <Myfloat_overflow>massive = vector<Myfloat_overflow>(numberOfColumn); 
   for (int i = 0; i < numberOfRows; i++) {
     matrix[i] = massive;
   }
@@ -37,7 +37,7 @@ Matrix::Matrix(const Matrix &a) {
   row = a.row;
   column = a.column;
 
-  matrix = new vector[row];
+  matrix = new vector<Myfloat_overflow>[row];
   for (int i = 0; i < row; i++) {
     matrix[i] = a.matrix[i];
   }

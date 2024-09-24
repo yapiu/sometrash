@@ -21,7 +21,7 @@ int main() {
   printf("\n");
   
   Matrix sum(3,3);
-  sum = m1 + m2;
+  //sum = m1 + m2;
   //sum = m1; //+
   sum.print();
 
