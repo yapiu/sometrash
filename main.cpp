@@ -14,6 +14,9 @@ int main() {
   m2[0][0] = 2;
   m2[0][1] = 1;
   m2[0][2] = 5;
+  m2[1][0] = 2.5;
+  m2[1][1] = 1.5;
+  m2[1][2] = 5.5;
 
   m1.print();
   printf("\n");
@@ -21,7 +24,7 @@ int main() {
   printf("\n");
   
   Matrix sum(3,3);
-  //sum = m1 + m2;
+  sum = m1 + m2;
   //sum = m1; //+
   sum.print();
 

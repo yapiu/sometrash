@@ -8,7 +8,7 @@ vector<Myfloat_overflow> &Matrix::operator[](int number) {
   return matrix[number];
 }
 
-Matrix &Matrix::operator=(const Matrix &a) {
+Matrix &Matrix::operator=(const Matrix &a) {// надро иф на количество векторов (row)
   for (int i = 0; i < row; i++) {
     matrix[i] = a.matrix[i];
   }
@@ -53,7 +53,7 @@ void Matrix::print() {
 }
 
 Matrix Matrix::operator+(Matrix &a){
-  if(a.column != column && a.row != row){
+  if(a.column != column || a.row != row){
     error("Size of matrix is not the same!");
   }
   Matrix sum(row,column);
